@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-from APItest.inter import *
-from APItest.sendmail import *
+#from APItest.inter import *
+#from APItest.sendmail import *
 
 import smtplib
 from email.mime.text import MIMEText
@@ -72,7 +72,7 @@ for one in range(1, 31):
 workbookWr.save('/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls')
 
 #发送邮件
-sen_email()
+#sen_email()
 
 
 
