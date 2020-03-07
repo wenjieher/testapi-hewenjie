@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys
+sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import base
