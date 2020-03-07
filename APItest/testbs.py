@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
 import sys
-#curPath = os.path.abspath(os.path.dirname(__file__))
-#rootPath = os.path.split(curPath)[0]
-#sys.path.append(rootPath)
+print(sys.path)
+import os
+os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
+for file in os.listdir(os.getcwd()):
+     print(file)
+sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest')
 
 #sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
 import xlrd, requests, json, xlutils
