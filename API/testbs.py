@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 from API.inter import *
@@ -8,7 +9,6 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
-
 
 # 读取用例
 excelDir = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/test002.xls'
