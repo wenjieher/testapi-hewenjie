@@ -72,7 +72,7 @@ for one in range(1, 31):
 workbookWr.save('/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls')
 
 #发送邮件
-#sen_email()
+sen_email()
 
 
 
