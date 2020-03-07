@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
+import base
 #from APItest.inter import *
 #from APItest.sendmail import *
 
