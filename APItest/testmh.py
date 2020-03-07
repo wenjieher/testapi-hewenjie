@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-from API.inter import *
-from API.sendmail import *
-
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
+from APItest.inter import *
 
 # 读取用例
-excelDir = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/test002.xls'
+excelDir = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/test001.xls'
 # 打开表格
 workbook = xlrd.open_workbook(excelDir, formatting_info=True)
 print(workbook.sheet_names())
@@ -29,7 +21,7 @@ Wrsheet = workbookWr.get_sheet(0)
 # print(clos)
 
 # 读取指定单元格
-for one in range(1, 31):
+for one in range(1, 24):
     cellData = worksheet.cell_value(one, 6)
     urlData = worksheet.cell_value(one, 3)
     dy = worksheet.cell_value(one, 10)
@@ -69,19 +61,7 @@ for one in range(1, 31):
     Wrsheet.write(one, 9, excel_res)
     Wrsheet.write(one, 8, result)
 
-workbookWr.save('/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls')
-
-#发送邮件
-sen_email()
-
-
-
-
-
-
-
-
-
+workbookWr.save('/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test001.xls')
 
 
 

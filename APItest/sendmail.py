@@ -14,7 +14,7 @@ def sen_email():
 
     msg = MIMEMultipart()
 
-    subject = "API Test Report Email"  # 主题
+    subject = "APItest Test Report Email"  # 主题
     text_content = "Hi，附件为本次接口测试的结果报告"
     text = MIMEText(text_content)
     msg.attach(text)

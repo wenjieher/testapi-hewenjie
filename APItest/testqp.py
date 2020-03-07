@@ -1,7 +1,7 @@
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-from API.inter import *
-from API.sendmail import *
+from APItest.inter import *
+from APItest.sendmail import *
 
 import smtplib
 from email.mime.text import MIMEText
