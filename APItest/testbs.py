@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-#import sys
-#print(sys.path)
+import sys
+print(sys.path)
+
 #import os
 #os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
 #for file in os.listdir(os.getcwd()):
