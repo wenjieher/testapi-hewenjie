@@ -14,6 +14,7 @@ import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import sys
 print(sys.path)
+sys.path.append('/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7')
 import base
 #from APItest.inter import *
 #from APItest.sendmail import *
