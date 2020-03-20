@@ -9,12 +9,11 @@
 #sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
 
 #sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
-from APItest import base
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import sys
 print(sys.path)
-sys.path.append('/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7')
+sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
 import base
 #from APItest.inter import *
 #from APItest.sendmail import *
