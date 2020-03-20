@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-import sys
-print(sys.path)
-
 #import os
 #os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
 #for file in os.listdir(os.getcwd()):
@@ -12,8 +9,11 @@ print(sys.path)
 #sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
 
 #sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
+from APItest import base
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
+import sys
+print(sys.path)
 import base
 #from APItest.inter import *
 #from APItest.sendmail import *
