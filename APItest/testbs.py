@@ -11,12 +11,12 @@
 #sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-import sys
+import sys,os
 print(sys.path)
 #sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
-import base
-#from APItest.inter import *
-#from APItest.sendmail import *
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 import smtplib
 from email.mime.text import MIMEText
