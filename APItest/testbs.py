@@ -13,7 +13,7 @@ import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import sys
 print(sys.path)
-sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
+#sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
 import base
 #from APItest.inter import *
 #from APItest.sendmail import *
