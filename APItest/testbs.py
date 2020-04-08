@@ -1,28 +1,16 @@
 # -*- coding: utf-8 -*-
-import os
 import sys
-os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
-for file in os.listdir(os.getcwd()):
-     print(file)
-sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest')
-sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest/testbs')
-sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls')
-sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
-
-sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
+print (sys.path)
 
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-import sys,os
-print(sys.path)
-#sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
-
-
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
+sys.path.append("/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest")
+sys.path.append("/Users/wenjiehe/Documents/GitHub/testapi-hewenjie")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload")
+sys.path.append("/Users/wenjiehe/PycharmProjects/untitled6/venv/lib/python3.7/site-packages")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages")
 
 # 读取用例
 excelDir = '/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls'
