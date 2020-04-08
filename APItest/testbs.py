@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
-#import os
-#os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
-#for file in os.listdir(os.getcwd()):
-     #print(file)
-#sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest')
-#sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest/testbs')
-#sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls')
-#sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
-
-#sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
+import os
 import sys
-sys.path
-sys.path.append("/usr/locat/bin/python3")
+os.chdir('/Users/Shared/Jenkins/Home/workspace/test/APItest')
+for file in os.listdir(os.getcwd()):
+     print(file)
+sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest')
+sys.path.append('/Users/Shared/Jenkins/Home/workspace/test/APItest/testbs')
+sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls')
+sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
+
+sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
+
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import sys,os
