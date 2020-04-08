@@ -9,14 +9,15 @@
 #sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
 
 #sys.path.append(r"/Users/Shared/Jenkins/Home/workspace/test/APItest")
+import sys
+sys.path
+sys.path.append("/usr/locat/bin/python3")
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
 import sys,os
 print(sys.path)
 #sys.path.append('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest')
-curPath = os.path.abspath(os.path.dirname(__file__))
-rootPath = os.path.split(curPath)[0]
-sys.path.append(rootPath)
+
 
 import smtplib
 from email.mime.text import MIMEText
