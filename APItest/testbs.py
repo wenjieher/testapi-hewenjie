@@ -1,16 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys
-print (sys.path)
 
 import xlrd, requests, json, xlutils
 from xlutils.copy import copy
-sys.path.append("/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest")
-sys.path.append("/Users/wenjiehe/Documents/GitHub/testapi-hewenjie")
-sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip")
-sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7")
-sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload")
-sys.path.append("/Users/wenjiehe/PycharmProjects/untitled6/venv/lib/python3.7/site-packages")
-sys.path.append("/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages")
+
 
 # 读取用例
 excelDir = '/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls'
