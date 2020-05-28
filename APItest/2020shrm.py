@@ -3,6 +3,7 @@
 import xlrd, requests, json, xlutils,jsonpath
 from xlutils.copy import copy
 from APItest.inter import *
+from APItest.sendmail import *
 
 # 读取用例
 excelDir = '/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/2020shrm.xls'
@@ -73,7 +74,7 @@ for one in range(1,2):
 
 workbookWr.save('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-2020shrm.xls')
 #发送邮件
-#sen_email()
+sen_email()
 
 
 

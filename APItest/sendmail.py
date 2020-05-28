@@ -22,7 +22,7 @@ def sen_email():
     # docFile = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls'
     # if file_path:  # 最开始的函数参数我默认设置了None ，想添加附件，自行更改一下就好
     # file_path = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls'
-    docFile = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-test002.xls'
+    docFile = '/Users/wenjiehe/PycharmProjects/untitled6/Class01/result-2020shrm.xls'
     docApart = MIMEApplication(open(docFile, 'rb').read())
     docApart.add_header('Content-Disposition', 'attachment', filename=docFile)
     msg.attach(docApart)
