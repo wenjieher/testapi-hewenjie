@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import xlrd, requests, json, xlutils
+import xlrd, requests, json, xlutils,jsonpath
 from xlutils.copy import copy
+from APItest.inter import *
 
 # 读取用例
-excelDir = '/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/test002.xls'
+excelDir = '/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/2020shrm.xls'
 # 打开表格
 workbook = xlrd.open_workbook(excelDir, formatting_info=True)
 print(workbook.sheet_names())
 # 读取第一个sheet
 # worksheet = workbook.sheet_names()[1]
-worksheet = workbook.sheet_by_name('抽奖')
+
+worksheet = workbook.sheet_by_name('首页')
 # 读取第一行
 rows = worksheet.row_values(1)
 print(rows)
@@ -22,12 +24,13 @@ Wrsheet = workbookWr.get_sheet(0)
 # print(clos)
 
 # 读取指定单元格
-for one in range(1, 31):
+for one in range(1,2):
     cellData = worksheet.cell_value(one, 6)
     urlData = worksheet.cell_value(one, 3)
     dy = worksheet.cell_value(one, 10)
     dyData = worksheet.cell_value(one, 11)
     token = worksheet.cell_value(one, 7)
+    #number1 = int(worksheet.cell_value(one,12))
 
     print(cellData)
     print(urlData)
@@ -38,8 +41,10 @@ for one in range(1, 31):
     test_url = urlData
     test_data = cellData
     headers = {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'token': token
+            'Content-Type': 'application/json',
+            'siteId':'18',
+            'accessToken':vip_get_token()
+            #'token': token
         }
     test_resp = requests.post(test_url, data=test_data, headers=headers)
     print(test_resp.text)
@@ -47,7 +52,9 @@ for one in range(1, 31):
     # token = test_resp.json()["data"]["access_token"]
     # print(token)
     res = test_resp.json()[dy]
+    #res = token
     print(res)
+
     if res == dyData:
         print('成功')
         excel_res = 'pass'
@@ -59,11 +66,12 @@ for one in range(1, 31):
     # 写入结果
     # workbookWr = xlrd.open_workbook(excelDir)
 
+
     Wrsheet.write(one, 9, excel_res)
     Wrsheet.write(one, 8, result)
 
-workbookWr.save('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-test002.xls')
 
+workbookWr.save('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-2020shrm.xls')
 #发送邮件
 #sen_email()
 

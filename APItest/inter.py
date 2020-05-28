@@ -1,62 +1,29 @@
 # -*- coding: utf-8 -*-
-import requests,json,jsonpath
-class HTTP:
-     def __init__(self):
-         self.session = requests.session()
-         self.result = ''
-         self.jsonres = {}
-         self.params = {}
+import requests,json
 
-     def post(self,url,d=None,j=None,en='utf8'):
-         # if d is None:
-         #     pass
-         # else:
-         #     d = self.__get_data(d)
-         res = self.session.post(url,d,j)
-         self.result = res.content.decode(en)
-         self.jsonres = json.loads(self.result)
-         jsons = self.result
-         jsons = jsons[jsons.find('{'):jsons.rfind('}') + 1]
-         self.jsonres = json.loads(jsons)
+def vip_get_token():
+    test_url = 'http://k8s.shmedia.tech/api/authority/verification/login'
+    test_data = "{\"username\":\"hwjzongbian\",\"password\":\"Wdit@123\"}"
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    test_resp = requests.post(test_url, data=test_data, headers=headers)
+    print(test_resp.text)
+    token = test_resp.json()["data"]["access_token"]
+    return token
 
-     def addheader(self,key,value):
-         value = self.__get_params(value)
-         self.session.headers[key] = value
+def get_clueid():
+    test_url = 'http://k8s.shmedia.tech/api/interview/clue/add/clue'
+    test_data = "{\"content\":\"<p>content</p>\",\"title\":\"test\",\"originId\":\"1123c4a3sfdfdfds2e8f724bb8bd2dsfd\",\"imageList\":[{\"attachName\":\"81f8a509gy1fnjdvkkwgoj20zk0m8ak8.jpg\",\"attachPath\":\"0443b67b9ca74b4b869c805941cddbf5\"}],\"status\":\"0\"}"
+    headers = {
+        'Content-Type': 'application/json',
+        'accessToken': vip_get_token()
+    }
+    test_resp = requests.post(test_url, data=test_data, headers=headers)
+    print(test_resp.text)
+    clueid = test_resp.json()["data"]["id"]
+    return clueid
 
-     def assertequals(self, jpath, value):
-         """
-         断言json结果里面，某个键的值和value相等
-         :param key: json结果的键
-         :param value: 预期的值
-         :return: 无
-         """
-         value = self.__get_param(value)
-         res = str(self.result)
-         try:
-             res = str(jsonpath.jsonpath(self.jsonres, jpath)[0])
-         except Exception as e:
-             pass
-
-     def savejson(self,jpath,p):
-         self.params[p] = str(jsonpath.jsonpath(self.jsonres,jpath)[0])
-
-     def __get_params(self,s):
-         #s = ''
-         for key in self.params:
-             s = s.replace('{'+key+'}',self.params[key])
-
-             return s
-
-     def __get_data(self, s):
-         # 默认是标准的url参数
-         flg = False
-         # s = eval(s)
-         # return s
-         # 分离键值对
-         param = {}
-         p = s.split('&')
-         # 获取键和值
-         # username=Roy&password
-         for pp in p:
-             # 分离键和值
-             ppp = pp.split('=')
+if __name__ == '__main__':
+    print(vip_get_token())
+    print(get_clueid())
