@@ -27,9 +27,9 @@ class TestMethod(unittest.TestCase):
         self.articledelete = articledelete.json()["data"]["id"]
         send = self.session.post("https://hongkou-gateway.shmedia.tech/api/jingle/cms/content/page", data="{\"isDeleted\":false,\"recursion\":false,\"pageNo\":1,\"pageSize\":20,\"channelId\":\"b08f8f2bf3344bedb88217287907d9fc\"}",headers={'Content-Type': 'application/json', 'accessToken': self.access_Token})
         self.articleid1 = send.json()["data"]["records"][0]["id"]
-        delete1 = self.session.post("https://hongkou-gateway.shmedia.tech/api/jingle/cms/content/page", data="{\"isDeleted\":false,\"recursion\":false,\"pageNo\":1,\"pageSize\":20,\"channelId\":\"b08f8f2bf3344bedb88217287907d9fc\"}", headers={'Content-Type': 'application/json', 'accessToken': self.access_Token})
-        self.delete1 = delete1.json()["data"]["records"][1]["id"]
-        print(self.articleid1)
+        #delete1 = self.session.post("https://hongkou-gateway.shmedia.tech/api/jingle/cms/content/page", data="{\"isDeleted\":false,\"recursion\":false,\"pageNo\":1,\"pageSize\":20,\"channelId\":\"b08f8f2bf3344bedb88217287907d9fc\"}", headers={'Content-Type': 'application/json', 'accessToken': self.access_Token})
+        #self.delete1 = delete1.json()["data"]["records"][1]["id"]
+        #print(self.articleid1)
 
     @classmethod
     def tearDown(self):
@@ -1044,24 +1044,7 @@ class TestMethod(unittest.TestCase):
         self.assertEqual("success", result1)
         self.assertEqual(0, result2)
 
-    def test054(self):
-        """删除草稿文稿content/delete接口"""
-        url = "https://hongkou-gateway.shmedia.tech/api/jingle/cms/content/delete"
 
-        payload = [{'id':self.delete1}]
-        headers = {
-            'Content-Type': 'application/json',
-            'accessToken': 'dc755e05215bdd7e3648afe954116ee9'
-        }
-
-        response = requests.request("POST", url, headers=headers, json=payload)
-
-        print(response.text)
-        result1 = response.json()['msg']
-        result2 = response.json()['code']
-        print(result1)
-        self.assertEqual("success", result1)
-        self.assertEqual(0, result2)
 
     def test055(self):
         """站点信息site/get接口"""
@@ -1127,7 +1110,7 @@ class TestMethod(unittest.TestCase):
         payload = "{}"
         headers = {
             'Content-Type': 'application/json',
-            'accessToken': 'dc755e05215bdd7e3648afe954116ee9'
+            'accessToken': self.access_Token
         }
 
         response = requests.request("POST", url, headers=headers, data=payload)
