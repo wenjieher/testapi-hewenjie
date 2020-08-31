@@ -5,7 +5,7 @@ from appium.webdriver.extensions.android.nativekey import AndroidKey
 
 desired_caps = {
   'platformName': 'Android', # 被测手机是安卓
-  'platformVersion': '7.1.1', # 手机安卓版本
+  'platformVersion': '10', # 手机安卓版本
   'deviceName': 'xxx', # 设备名，安卓手机可以随意填写
   'appPackage': 'com.wdit.shrmtxh.test', # 启动APP Package名称
   'appActivity': 'com.wdit.shrmt.android.ui.main.RmShSplashActivity', # 启动Activity名称
