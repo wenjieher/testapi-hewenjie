@@ -75,7 +75,7 @@ for one in range(1,42):
 
 workbookWr.save('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/APItest/result-jingan2020test.xls')
 #发送邮件
-#sen_email()
+sen_email()
 
 
 
