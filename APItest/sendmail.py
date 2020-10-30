@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 
+
 # 写成了一个通用的函数接口，想直接用的话，把参数的注释去掉就好
 def sen_email():
     msg_from = '825361948@qq.com'  # 发送方邮箱

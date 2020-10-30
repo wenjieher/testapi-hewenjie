@@ -26,7 +26,7 @@ Wrsheet = workbookWr.get_sheet(0)
 # print(clos)
 
 # 读取指定单元格
-for one in range(1,42):
+for one in range(1,2):
     cellData = worksheet.cell_value(one, 6)
     urlData = worksheet.cell_value(one, 3)
     dy = worksheet.cell_value(one, 10)
