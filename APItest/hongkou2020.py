@@ -25,7 +25,7 @@ Wrsheet = workbookWr.get_sheet(0)
 # print(clos)
 
 # 读取指定单元格
-for one in range(1,5):
+for one in range(1,55):
     cellData = worksheet.cell_value(one, 6)
     urlData = worksheet.cell_value(one, 3)
     dy = worksheet.cell_value(one, 10)
@@ -43,9 +43,8 @@ for one in range(1,5):
     test_data = cellData
     headers = {
             'Content-Type': 'application/json',
-            'siteId':'18',
-            'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjODE1NmM2MTU4Y2Q0MjQ3YTAzMGExNThkZDg1NjZkYzsxOCIsImlhdCI6MTU5MjYzNDYyMCwiZXhwIjoyMTExMDM0NjIwfQ.0O6eBB5CIKKG9dsZz-9akLGHiZFnSoDi3rIQ7iJClTtlju_hmyn1LFrRR4kIbMNDWtaJdhg4xJm3BRf9Rx3lCw'
-            #'token': token
+            'siteId':'310109',
+            'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1YzMwMWYzYjAzNTI0OTIwYTM0MmE2YTExMjIzMGU0YzszMTAxMDkiLCJpYXQiOjE2MDUwNzczNjIsImV4cCI6MjEyMzQ3NzM2Mn0.qOI7ymudx6ZYtCvDGe9S3-vAPDjlL3fLtw8ETM6pWO47zZtfxWlac4o6xMXc0ohuUbsz7NJRPOpg2oWcB7FoRQ'
         }
     test_resp = requests.post(test_url, data=test_data, headers=headers)
     print(test_resp.text)

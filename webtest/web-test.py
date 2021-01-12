@@ -21,19 +21,19 @@ except BaseException as msg:
     print("新建目录失败：%s" % msg)
 driver = webdriver.Chrome('/usr/local/bin/chromedriver')
 driver.implicitly_wait(20)
-driver.get("http://activity.fm.easttone.com/system/login.do")
-time.sleep(2)
-# 输入用户名（记者）
-driver.find_element_by_xpath("//*[@id='username']").send_keys("shopqp")
-# 输入密码
-driver.find_element_by_xpath("//*[@id='password']").send_keys("shop@qingpu")
-time.sleep(5)
-# 点击登陆按钮
-driver.find_element_by_xpath("//*[@id='loginform']/input[5]").click()
+driver.get("https://hongkou-gateway.shmedia.tech/sso/login.html")
+time.sleep(20)
+driver.get("https://hongkou-gateway.shmedia.tech/admin/")
+time.sleep(3)
+#try:
+    #url=driver.save_screenshot('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/webtest/picture' + picture_time + '.png')
+    #print("%s ：截图成功！！！" % url)
+#except BaseException as pic_msg:
+    #print("截图失败：%s" % pic_msg)
 try:
-    url=driver.save_screenshot('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/webtest/picture' + picture_time + '.png')
-    print("%s ：截图成功！！！" % url)
-except BaseException as pic_msg:
-    print("截图失败：%s" % pic_msg)
+    picture_url=driver.get_screenshot_as_file('/Users/wenjiehe/Documents/GitHub/testapi-hewenjie/webtest/picture/进入首页.png')
+    print("%s：截图成功！！！" % picture_url)
+except BaseException as msg:
+    print(msg)
 # 退出
 driver.quit()
